@@ -17,14 +17,14 @@ body{
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.7px;
+    line-height: 1.7;
     color: #777;
     padding: 30px;
 }
 
 .header{
     height: 95vh;
-    background-image:linear-gradient(to right bottom, rgba(126,213,111,0.8),#55c57abd), url('../img/hero.jpg');
+    background-image:linear-gradient(to right bottom, rgba(126,213,111,0.8),#28b485b7), url('../img/hero.jpg');
     background-size: cover;
     background-position: top;
     position: relative;
@@ -46,9 +46,10 @@ body{
 
 .heading-box{
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+   
 
     
 }
@@ -56,19 +57,98 @@ body{
 .heading-primary{
     color: white;
     text-transform: uppercase;
+    text-align: center;
+    backface-visibility: hidden;
       
 }
 
 .heading-primary-main{
-        font-size: 60px;
+        font-size: 1.7em;
         display: block;
-        letter-spacing: 35px ;
+        letter-spacing: 0.8em;
         font-weight: 400;
+        animation-name: main-heading;
+        animation-duration: 1s;
     
        
 }
 .heading-primary-sub{
     display: block;
-    letter-spacing: 17.4px;
+    letter-spacing: 0.7em;
     font-weight: 700;
+    font-size: 0.7em;
+    animation-name: sub-heading;
+    animation-duration: 1s;
+}
+
+.discover-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    background-color: #ffffff;
+    text-decoration: none;
+    color: #777;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 1.1em;
+    border-radius: 1.2em;
+    animation-name: discover-button;
+    animation-delay: 1s;
+}
+
+/* adding a transition when the button is hovered as well as adding animations to make button look sexier when hovered */
+.discover-button:hover{
+    transform: translate(-50%,-55%);
+    animation-name: button-animation;
+    animation-duration: 200ms;
+}
+
+
+
+@keyframes main-heading{
+    0%{
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes sub-heading{
+    0%{
+        transform: translateX(10%);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes discover-button{
+    0%{
+        transform: translateY(40%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+
+/* Configuring all the animations present in the code */
+@keyframes button-animation{
+    100%{
+        padding: 1em 3em 1em 3em;
+    }
+   
+}
+
+
+/* Media queries for responsive designs */
+
+@media only screen and (max-width:800px){
+    body{
+        padding: 0%;
+    }
 }
