@@ -7,19 +7,26 @@ Dark green: #28b485
 
 */
 
-*{
+/* Better approach to reset the page as it also sets these properties to these other psuedo classes */
+*,
+*::before,
+*::after{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
 }
 
 body{
     font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
     font-weight: 400;
-    font-size: 16px;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
 }
 
 .header{
@@ -32,26 +39,24 @@ body{
 
 }
 
-.logo-box{
+.header__logo-box{
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
     
 }
 
-.logo{
-    height: 35px;
+.header__logo{
+    height: 3.5rem;
 }
 
 
-.heading-box{
+.header__heading-box{
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-   
-
-    
+    text-align: center;
 }
 
 .heading-primary{
@@ -62,53 +67,88 @@ body{
       
 }
 
-.heading-primary-main{
-        font-size: 1.7em;
+.heading-primary--main{
+        font-size: 6rem;
         display: block;
-        letter-spacing: 0.8em;
+        letter-spacing: 3.5rem;
         font-weight: 400;
         animation-name: main-heading;
         animation-duration: 1s;
     
        
 }
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
-    letter-spacing: 0.7em;
+    letter-spacing: 1.75rem;
     font-weight: 700;
-    font-size: 0.7em;
+    font-size: 2rem;
     animation-name: sub-heading;
     animation-duration: 1s;
 }
 
-.discover-button{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#discover-button{
+    animation-name: discover-button;
+    animation-fill-mode: backwards;
+    animation-duration: .5s;
+    animation-delay: 1s;
+    font-size: 1.5rem;
+}
+
+.btn:link, .btn:visited{
+    display: inline-block;
     text-transform: uppercase;
-    background-color: #ffffff;
     text-decoration: none;
     color: #777;
-    padding: 0.5em 1em 0.5em 1em;
-    font-size: 1.1em;
-    border-radius: 1.2em;
-    animation-name: discover-button;
-    animation-delay: 1s;
+    transition: all .2s;
+    padding: 1em 4em;
+    border-radius: 15rem;
+    margin-top: 40px;
+    position: relative;
+    
+}
+
+
+.btn--white{
+    background-color: #ffffff;
+}
+
+.btn::after{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    transition: all .2s;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.btn--white::after{
+    background-color: #ffffff;
 }
 
 /* adding a transition when the button is hovered as well as adding animations to make button look sexier when hovered */
-.discover-button:hover{
-    transform: translate(-50%,-55%);
-    animation-name: button-animation;
-    animation-duration: 200ms;
+.btn:hover{
+    transform: translateY(-5%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
 }
 
+.btn:hover::after{
+    transform: scale(2);
+    opacity: 0;
+}
+
+.btn:active{
+    transform: translateY(5%);
+    box-shadow: 0 5px 10px rgba(189, 9, 9, 0.8)
+}
 
 
 @keyframes main-heading{
     0%{
-        transform: translateX(-10%);
+        transform: translateX(-10rem);
     }
     100%{
         transform: translate(0);
@@ -117,16 +157,16 @@ body{
 
 @keyframes sub-heading{
     0%{
-        transform: translateX(10%);
+        transform: translateX(10rem);
     }
     100%{
         transform: translate(0);
     }
 }
 
-@keyframes discover-button{
+@keyframes discover--button{
     0%{
-        transform: translateY(40%);
+        transform: translateY(4rem);
         opacity: 0;
     }
     100%{
@@ -145,10 +185,34 @@ body{
 }
 
 
+@keyframes stop{
+    100%{
+        opacity: 0.1;
+    }
+}
+
 /* Media queries for responsive designs */
 
 @media only screen and (max-width:800px){
+    html{
+        font-size: 60%;
+    }
     body{
         padding: 0%;
+    }
+}
+
+@media only screen and (max-width:540px){
+    html{
+        font-size: 7px;
+    }
+}
+
+@media only screen and (max-width:480px){
+    html{
+        font-size: 5px;
+    }
+    #discover--button{
+        font-size: 2.4rem;
     }
 }
