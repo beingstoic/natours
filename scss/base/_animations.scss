@@ -1,0 +1,55 @@
+@keyframes main-heading{
+    0%{
+        transform: translateX(-10rem);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes sub-heading{
+    0%{
+        transform: translateX(10rem);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes discover--button{
+    0%{
+        transform: translateY(4rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+
+/* Configuring all the animations present in the code */
+@keyframes button-animation{
+    100%{
+        padding: 1em 3em 1em 3em;
+    }
+   
+}
+
+
+@keyframes stop{
+    100%{
+        opacity: .1;
+    }
+}
+
+/* Media queries for responsive designs */
+
+@media only screen and (max-width:800px){
+    html{
+        font-size: 60%;
+    }
+    body{
+        padding: 0%;
+    }
+}

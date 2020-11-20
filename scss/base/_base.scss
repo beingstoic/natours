@@ -1,0 +1,21 @@
+/* Better approach to reset the page as it also sets these properties to these other psuedo classes */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-grey;
+    padding: 3rem;
+}
