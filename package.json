@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "A responsive website for booking tour packages",
+  "main": "index.html",
+  "scripts": {
+    "compile:sass":"node-sass scss/main.scss css/style.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beingstoic/natours.git"
+  },
+  "author": "Rishabh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beingstoic/natours/issues"
+  },
+  "homepage": "https://github.com/beingstoic/natours#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
