@@ -7,12 +7,46 @@ $color-white: #fff;
 $color-grey:#777;
 $color-black:#000;
 $color-red:#bd0909;
+$color-light: #eee;
 
+$color-secondary-light:#ffb900;
+$color-secondary-dark:#ff7700;
 
+$color-tertiary-light:#2998ff;
+$color-tertiary-dark:#5643fa;
+
+//Background color
+$bg-gradient: linear-gradient(
+                    to right bottom,
+                    rgba($color-primary-light,0.8),
+                    rgba($color-primary-dark,0.8)
+                );
 // GRID
 $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-horizontal: 6rem;
 
-//
+//font-size
 $default-font-size: 1.6rem;
+
+//shadow-var:
+$box-shadow:  0 1.5rem 4rem rgba($color-black, 0.15);
+
+//card gradients
+$card-gradient-1:linear-gradient(
+                    to right bottom,
+                    rgba($color-secondary-light,0.8),
+                    rgba($color-secondary-dark,0.8)
+                );
+
+$card-gradient-2:linear-gradient(
+                    to right bottom,
+                    rgba($color-primary-light,0.8),
+                    rgba($color-primary-dark,0.8)
+                ); 
+
+$card-gradient-3:linear-gradient(
+                    to right bottom,
+                    rgba($color-tertiary-light,0.8),
+                    rgba($color-tertiary-dark,0.8)
+                ); 

@@ -30,7 +30,14 @@
             background-color: $color-white;
         }
     }
+    &--green{
+        background-color: $color-primary-medium;
+        color: $color-white;
 
+        &::after{
+            background-color: $color-primary-medium;
+        }
+    }
     &:active{
         transform: translateY(5%);
         box-shadow: 0 5px 10px rgba($color-red, 0.8);
